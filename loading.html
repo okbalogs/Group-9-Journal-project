@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal Loading</title>
+    <link href="styles.css" rel="stylesheet"> <!-- your existing theme CSS -->
+    <style>
+        /* Fullscreen loading wrapper */
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-green) 50%, var(--accent-green) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            z-index: 2000;
+        }
+
+        .loading-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-top: var(--spacing-6);
+        }
+
+        .loading-subtitle {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: var(--spacing-2);
+        }
+
+        /* Placeholder for book animation */
+        .book-loader {
+            width: 100px;
+            height: 100px;
+            margin-bottom: var(--spacing-6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-screen">
+        <div class="book-loader">
+            <video autoplay muted loop style="width:150px; height:150px; object-fit:contain;">
+                <source src="src/image-video/open-book-animated-icon-gif-download-12886033.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="loading-title">Loading Journal...</div>
+        <div class="loading-subtitle">Please wait a moment</div>
+    </div>
+
+    <script>
+        // Automatically redirect to main journal page after 3 seconds
+        setTimeout(() => {
+            window.location.href = "index.html"; // replace with your main page path
+        }, 3000);
+    </script>
+</body>
+
+
+</html>
